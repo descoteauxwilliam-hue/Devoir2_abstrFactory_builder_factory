@@ -523,6 +523,45 @@
         <mxCell id="g6l_zxmtRiuYc5FUarOP-1" parent="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ Display(): void" vertex="1">
           <mxGeometry height="26" width="200" x="40" y="290" as="geometry" />
         </mxCell>
+        <mxCell id="g6l_zxmtRiuYc5FUarOP-2" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="FactoryBasement" vertex="1">
+          <mxGeometry height="60" width="250" x="-550" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="g6l_zxmtRiuYc5FUarOP-3" parent="g6l_zxmtRiuYc5FUarOP-2" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="250" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="g6l_zxmtRiuYc5FUarOP-4" parent="g6l_zxmtRiuYc5FUarOP-2" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ static Factory(ProductType): IBasement&amp;nbsp;" vertex="1">
+          <mxGeometry height="26" width="250" y="34" as="geometry" />
+        </mxCell>
+        <mxCell id="g6l_zxmtRiuYc5FUarOP-5" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="FactoryStructure" vertex="1">
+          <mxGeometry height="60" width="270" x="-610" y="780" as="geometry" />
+        </mxCell>
+        <mxCell id="g6l_zxmtRiuYc5FUarOP-6" parent="g6l_zxmtRiuYc5FUarOP-5" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="270" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="g6l_zxmtRiuYc5FUarOP-7" parent="g6l_zxmtRiuYc5FUarOP-5" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ static Factory(ProductType): IStructure" vertex="1">
+          <mxGeometry height="26" width="270" y="34" as="geometry" />
+        </mxCell>
+        <mxCell id="g6l_zxmtRiuYc5FUarOP-8" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="FactoryInterior" vertex="1">
+          <mxGeometry height="60" width="240" x="-560" y="1400" as="geometry" />
+        </mxCell>
+        <mxCell id="g6l_zxmtRiuYc5FUarOP-9" parent="g6l_zxmtRiuYc5FUarOP-8" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="240" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="g6l_zxmtRiuYc5FUarOP-10" parent="g6l_zxmtRiuYc5FUarOP-8" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ static Factory(ProducType): IInterior" vertex="1">
+          <mxGeometry height="26" width="240" y="34" as="geometry" />
+        </mxCell>
+        <mxCell id="g6l_zxmtRiuYc5FUarOP-11" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="FactoryRoof" vertex="1">
+          <mxGeometry height="60" width="210" x="-560" y="1900" as="geometry" />
+        </mxCell>
+        <mxCell id="g6l_zxmtRiuYc5FUarOP-12" parent="g6l_zxmtRiuYc5FUarOP-11" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="210" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="g6l_zxmtRiuYc5FUarOP-13" parent="g6l_zxmtRiuYc5FUarOP-11" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ static Factory(ProducType): IRoof" vertex="1">
+          <mxGeometry height="26" width="210" y="34" as="geometry" />
+        </mxCell>
+        <mxCell id="g6l_zxmtRiuYc5FUarOP-14" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Enum&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;ProducType&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Quebecois&lt;br&gt;+ Persian&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Modern&lt;/p&gt;" vertex="1">
+          <mxGeometry height="110" width="110" x="-155" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
