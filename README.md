@@ -113,10 +113,10 @@ Un total de 12 implémentation concrètes sera prodfuit ( 4 interface, 3 style )
   
 ``` c#
 public class House {
-    IBasement basement;
-    IStructure structure;
-    IInterior interior;
-    IRoof roof;
+    private IBasement basement;
+    private IStructure structure;
+    private IInterior interior;
+    private IRoof roof;
 
     public void SetBasement(ProducType type) {
         // set this.basement whith a concrete basement of the chosen type
@@ -162,10 +162,10 @@ public class House {
   
 ``` c#
 public class Duplex {
-    IBasement basement;
-    IStructure structure;
-    IInterior interior;
-    IRoof roof;
+    private IBasement basement;
+    private IStructure structure;
+    private IInterior interior;
+    private IRoof roof;
 
     public void SetBasement(ProducType type) {
         // set this.basement whith a concrete basement of the chosen type
@@ -293,41 +293,41 @@ Il doit :
 
 ### Contenu
 
-- [ ] Les interfaces des composant
-   - [ ] `IBasement`
-   - [ ] `IStructure`
-   - [ ] `IInterior`
-   - [ ] `IRoof`
-- [ ] Les classes concrete des composantes
-   - [ ] Sous-sols
-      - [ ] `QuebecoisBasement`
-      - [ ] `PersianBasement`
-      - [ ] `QuebecoisInterior`
-   - [ ] Structures
-      - [ ] `QuebecoisStructure`
-      - [ ] `PersianStructure`
-      - [ ] `ModernStructure`
-   - [ ] Interieurs
-      - [ ] `QuebecoisInterior`
-      - [ ] `PersianInterior`
-      - [ ] `ModernInterior`
-   - [ ] Toits
-      - [ ] `QuebecoisRoof`
-      - [ ] `PersianRoof`
-      - [ ] `ModernRoof`
-- [ ] Les Factories
-   - [ ] `FactoryBasement`
-   - [ ] `FactoryStructure`
-   - [ ] `FactoryInterior`
-   - [ ] `FactoryRoof`
-- [ ] Les Batiments
-   - [ ] `House`
-   - [ ] `Duplex`
-- [ ] Abstract Factory
-   - [ ] `AbstractFactory`
-   - [ ] `QuebecoisFactory`
-   - [ ] `PersianFactory`
-   - [ ] `ModernFactory`
+- [x] Les interfaces des composant
+   - [x] `IBasement`
+   - [x] `IStructure`
+   - [x] `IInterior`
+   - [x] `IRoof`
+- [x] Les classes concrete des composantes
+   - [x] Sous-sols
+      - [x] `QuebecoisBasement`
+      - [x] `PersianBasement`
+      - [x] `QuebecoisInterior`
+   - [x] Structures
+      - [x] `QuebecoisStructure`
+      - [x] `PersianStructure`
+      - [x] `ModernStructure`
+   - [x] Interieurs
+      - [x] `QuebecoisInterior`
+      - [x] `PersianInterior`
+      - [x] `ModernInterior`
+   - [x] Toits
+      - [x] `QuebecoisRoof`
+      - [x] `PersianRoof`
+      - [x] `ModernRoof`
+- [x] Les Factories
+   - [x] `FactoryBasement`
+   - [x] `FactoryStructure`
+   - [x] `FactoryInterior`
+   - [x] `FactoryRoof`
+- [x] Les Batiments
+   - [x] `House`
+   - [x] `Duplex`
+- [x] Abstract Factory
+   - [x] `AbstractFactory`
+   - [x] `QuebecoisFactory`
+   - [x] `PersianFactory`
+   - [x] `ModernFactory`
 - [ ] Builder
    - [ ] Interfaces
       - [ ] `IHouseBuilder`
