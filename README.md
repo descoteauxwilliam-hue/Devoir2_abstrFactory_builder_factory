@@ -1,11 +1,360 @@
 # Devoir2_abstrFactory_builder_factory
-Vous devez développer en C# (.NET) une application console qui démontre l’utilisation 
-combinée de trois patrons créationnels :
 
+Vous devez développer en C# (.NET) une application console qui démontre l’utilisation combinée de trois
+patrons créationnels.
+
+
+| Table des Matières                                  |
+|:---------------------------------------------------:|
+| [Objet concret](#objet-concret)                     |
+| [Style des objet concret](#style-des-objet-concret) |
+| [Classe compose](#classe-compose)                   |
+| [Factory Method](#factory-method)                   |
+| [Abstract Factory](#abstract-factory)               |
+| [Builder](#builder)                                 |
+| [Director](#director)                               |
+| [Programme de Test](#programme-de-test)             |
+| [Diagrame UML](#diagrame-uml)                       |
+
+
+## Objet concret
+
+- `House` (une maison)
+- `Duplex`
+
+## Style des objet concret
+
+- Quebecois
+- Persian
+- Modern
+
+## Modèle métier
+
+### Les composants
+
+1. Chaque maison et duplexe doivent être composé de :
+   
+    - `IBasement` (sous-sol)
+    - `IStructure` (structure)
+    - `IInterior` (intérieur)
+    - `IRoof` (toit)
+  
+1. Chaque interface doit définir la méthode `void display();`
+
+    Exemple :
+   ``` c#
+   public interface IBuildingComposant {
+       void Display();
+   }
+   ```
+
+## Variantes concretes stylés
+
+Chaque composant doit avoir une implémentention concrete pour chaque style.  
+Un total de 12 implémentation concrètes sera prodfuit ( 4 interface, 3 style )
+
+## Factory Method
+
+1. Les styles seront defini par un Enum :  
+
+   ``` c#
+   public enum ProductType {
+       Quebecois,
+       Persian,
+       Modern,
+   }
+   ```
+2. Chaque factory doit retourner une composant.  
+   Donc 4 factories sera necessaire :
+
+   - `FactoryBasement => IBasement`
+   - `FactoryStructure => IStructure`
+   - `FactoryInterior => IInterior`
+   - `FactoryRoof => IRoof`
+  
+3. Chaque factory doit implementer ces methode :
+
+   - `public static IBasement Factory(ProductType type)`
+   - `public static IStructure Factory(ProductType type)`
+   - `public static IInterior Factory(ProductType type)`
+   - `public static IRoof Factory(ProductType type)`
+  
+   Exmple :
+
+   ``` c#
+   public class FactoryExample {
+       public static IBasement Factory(ProductType type) => new BasementExample{ type = type };
+       public static IStructure Factory(ProductType type) => new StructureExample{ type = type };
+       public static IInterior Factory(ProductType type) => new InteriorExample{ type = type };
+       public static IRoof Factory(ProductType type) => new RoofExample{ type = type };
+   }
+   ```
+
+4. Elle doit utiliser un switch pour retourner la bonne classe concrete.
+
+## Classe compose
+
+### House
+
+1. Proprietes :
+
+   - `IBasement basement`
+   - `IStructure structure`
+   - `IInterior interior`
+   - `IRoof roof`
+  
+2. Methode obligatoire :
+
+   - `void SetBasement(ProducType type)`
+   - `void SetStructure(ProducType type)`
+   - `void SetInterior(ProducType type)`
+   - `void SetRoof(ProducType type)`
+   - `void DisplayHouse()` : appele `Display()` sur les 4 composant en suivant un ordre logique
+  
+``` c#
+public class House {
+    IBasement basement;
+    IStructure structure;
+    IInterior interior;
+    IRoof roof;
+
+    public void SetBasement(ProducType type) {
+        // set this.basement whith a concrete basement of the chosen type
+    }
+    public void SetStructure(ProducType type) {
+        // set this.structure whith a concrete structure of the chosen type
+    }
+    public void SetInterior(ProducType type) {
+        // set this.interior whith a concrete interior of the chosen type
+    }
+    public void SetRoof(ProducType type) {
+        // set this.roof whith a concrete roof of the chosen type
+    }
+    public void DisplayHouse() {
+        // appele `Display()` sur les 4 composant en suivant un ordre logique
+
+        /* Exemple :
+         * roof.Display();
+         * interior.Display();
+         * structure.Display();
+         * basement.Display();
+         */
+    }
+}
+```
+
+### Duplex
+
+1. Proprietes :
+
+   - `IBasement basement`
+   - `IStructure structure`
+   - `IInterior interior`
+   - `IRoof roof`
+  
+2. Methode obligatoire :
+
+   - `void SetBasement(ProducType type)`
+   - `void SetStructure(ProducType type)`
+   - `void SetInterior(ProducType type)`
+   - `void SetRoof(ProducType type)`
+   - `void DisplayDuplex()` : appele `Display()` sur les 4 composant en suivant un ordre logique
+  
+``` c#
+public class Duplex {
+    IBasement basement;
+    IStructure structure;
+    IInterior interior;
+    IRoof roof;
+
+    public void SetBasement(ProducType type) {
+        // set this.basement whith a concrete basement of the chosen type
+    }
+    public void SetStructure(ProducType type) {
+        // set this.structure whith a concrete structure of the chosen type
+    }
+    public void SetInterior(ProducType type) {
+        // set this.interior whith a concrete interior of the chosen type
+    }
+    public void SetRoof(ProducType type) {
+        // set this.roof whith a concrete roof of the chosen type
+    }
+    public void DisplayDuplex() {
+        // appele `Display()` sur les 4 composant en suivant un ordre logique
+
+        /* Exemple :
+         * roof.Display();
+         * interior.Display();
+         * structure.Display();
+         * basement.Display();
+         */
+    }
+}
+```
+
+## Abstract Factory
+
+### Abstraction
+
+Creer une classe abstraite ou une interface qui definit :
+
+- `House MakeHouse()`
+- `Duplex MakeDuplex`
+
+Example :
+
+``` c#
+public abstract class AbstractFactory {
+    public abstract House MakeHouse();
+    public abstract Duplex MakeDuplex();
+}
+```
+
+### Factory Concrete
+
+1. Creer une factory concrete pour chaque style :
+   
+   - `QuebecoisFactory : AbstractFactory`
+   - `PersianFactory : AbstractFactory`
+   - `ModernFactory : AbstractFactory`
+
+3. Chaque factory doit creer une `House` et `Duplex`.
+4. Chaque factory doit appeler les setter avec le `ProducType` lui correspondant.
+   Exemple :
+   `QuebecoisFactory.MakeHouse()` doit contruire une `House` dont toutes le sparties sont Quebecois.
+
+## Builder
+
+### Interface IBuilder
+
+1. Deux interface de Builder doivent etre defini :
+
+   - `IHouseBuilder` : Builder de `House`
+   - `IDuplexBuilder` : Builder de `Duplex`
+
+2. Chaque interface doive contenir les methodes suivantes :
+
+   - `void BuildBasement()`
+   - `void BuildStructure()`
+   - `void BuildInterior()`
+   - `void BuildRoof()`
+   - `House GetHouse()` ou `Duplex GetDuplex()` selon le builder
+
+   Exemple :
+
+   ``` c#
+   public interface IBuildingBuilder {
+       void BuildBasement();
+       void BuildStructure();
+       void BuildInterior();
+       void BuildRoof();
+       Building GetBuilding();
+   }
+   ```
+
+### Builder Concret
+
+1. Implementer les avec des classes concretes les builder pour chaque style et chaque type de batiments :
+
+   - `House`
+
+      - `QuebcoisHouseBuilder : IHouseBuilder`
+      - `PersianHouseBuilder : IHouseBuilder`
+      - `ModernHouseBuilder : IHouseBuilder`
+  
+   - `Duplex`
+
+      - `QuebecoisDuplexBuilder : IDuplexBuilder`
+      - `PersianDuplexBuilder : IDuplexBuilder`
+      - `ModernDuplexBuilder : IDuplexBuilder`
+
+2. Chaque builder contret doit :
+
+   - Posseder une instance de l'objet en construction.
+   - Utiliser les Factory pour mettre les bons composants
+   - Retourner l'objet final avec `GetHouse`/`GetDuplex()`
+  
+## Director
+
+Creer deux classes `Engineer` qui recoit un builder dans son constructeur :
+
+- `HouseEngineer(IHouseBuilder builder)`
+- `DuplexEngineer(IDuplexBuilder builder)`
+
+## Programme de Test
+
+Tester les implementation a l'interieur de la methode `Main()` de *Program.cs*.  
+Il doit :
+
+- Demontrer la creation de tous les modeles de `House` et de `Duplex`.
+- Afficher les deux batiments avec `House.DiplayHouse()` et `Duplex.DisplayDuplex()`.
 
 ## Diagrame UML
 
-On vas suivre la method GoF une factory method donc nous evitons le switch
+### Contenu
+
+- [ ] Les interfaces des composant
+   - [ ] `IBasement`
+   - [ ] `IStructure`
+   - [ ] `IInterior`
+   - [ ] `IRoof`
+- [ ] Les classes concrete des composantes
+   - [ ] Sous-sols
+      - [ ] `QuebecoisBasement`
+      - [ ] `PersianBasement`
+      - [ ] `QuebecoisInterior`
+   - [ ] Structures
+      - [ ] `QuebecoisStructure`
+      - [ ] `PersianStructure`
+      - [ ] `ModernStructure`
+   - [ ] Interieurs
+      - [ ] `QuebecoisInterior`
+      - [ ] `PersianInterior`
+      - [ ] `ModernInterior`
+   - [ ] Toits
+      - [ ] `QuebecoisRoof`
+      - [ ] `PersianRoof`
+      - [ ] `ModernRoof`
+- [ ] Les Factories
+   - [ ] `FactoryBasement`
+   - [ ] `FactoryStructure`
+   - [ ] `FactoryInterior`
+   - [ ] `FactoryRoof`
+- [ ] Les Batiments
+   - [ ] `House`
+   - [ ] `Duplex`
+- [ ] Abstract Factory
+   - [ ] `AbstractFactory`
+   - [ ] `QuebecoisFactory`
+   - [ ] `PersianFactory`
+   - [ ] `ModernFactory`
+- [ ] Builder
+   - [ ] Interfaces
+      - [ ] `IHouseBuilder`
+      - [ ] `IDuplexBuilder`
+   - [ ] Classe Concrete
+      - [ ] `QuebecoisHouseBuilder`
+      - [ ] `PersianHouseBuilder`
+      - [ ] `ModernHouseBuilder`
+      - [ ] `QuebecoisDuplexBuilder`
+      - [ ] `PersianDuplexBuilder`
+      - [ ] `ModernDuplexBuilder`
+- [ ] Engineer
+   - [ ] `HouseEngineer`
+   - [ ] `DuplexEngineer`
+     
+### Relation
+
+Le diagramme doit montrer les relations entre entites suivantes :
+
+- Heritage (implements/extends)
+- Dependances (use)
+- Composition
+- Aggregation
+
+-------------------------------------------------------------------------------------------------------------------
+
+On vas suivre la method GoF[^GoF] une factory method donc nous evitons le switch.
 
 ### Factory method
 - [ ] integration des interfaces (IBasement, IStructure, IInterior, IRoof)
@@ -23,12 +372,15 @@ On vas suivre la method GoF une factory method donc nous evitons le switch
 - [ ] subclass de IRoofFactory retourne IRoof
 
 ### Builder
-- [ ]
-- [ ] integration des classes concretes
-- [ ] integration du builder()
-- [ ] 
+
+- [ ] Integration des classes concretes et complètes (House ou Duplex)
+- [ ] Integration du builder()
+- [ ] Intergation d'un directeur pour définir l'ordre de construction
+      
 ### Abstract Factory
-- [ ] 
+
+- [ ] Créée de factory selon les styles et non le type d'objet
+
+[^GoF]: GoF est <...>
 
 
-## Program
