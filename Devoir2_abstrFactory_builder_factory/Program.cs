@@ -1,10 +1,6 @@
-﻿
-using AbstractFactory;
+﻿using System.Diagnostics;
 
-using System.Diagnostics;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-
-
+MainV1();
 MainV2();
 
 static void MainV1()

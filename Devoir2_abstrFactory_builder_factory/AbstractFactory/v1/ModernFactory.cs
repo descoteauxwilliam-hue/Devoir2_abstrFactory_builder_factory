@@ -14,12 +14,12 @@ namespace AbstractFactory.v1
     {
         public Duplex makeDuplex()
         {
-            throw new NotImplementedException();
+            return new Duplex();
         }
 
         public House makeHouse()
         {
-            throw new NotImplementedException();
+            return new House();
         }
     }
 }

@@ -14,7 +14,7 @@ namespace Data.v1.Building
         IStructure structure;
         IInterior interior;
         IRoof roof;
-
+        
         public void setBasement(IBasement basement)
         {
             this.basement = basement;
