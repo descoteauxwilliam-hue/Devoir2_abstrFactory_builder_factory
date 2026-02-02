@@ -5,8 +5,12 @@ using System.Text;
 
 namespace Builder.v1
 {
-    internal interface IHouseBuilder: IBuilder
+    public interface IHouseBuilder
     {
+        public IHouseBuilder buildBasement();
+        public IHouseBuilder buildStructure();
+        public IHouseBuilder buildInterior();
+        public IHouseBuilder buildRoof();
         public House getHouse();
     }
 }

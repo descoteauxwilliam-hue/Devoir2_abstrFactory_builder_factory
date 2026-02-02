@@ -328,20 +328,20 @@ Il doit :
    - [x] `QuebecoisFactory`
    - [x] `PersianFactory`
    - [x] `ModernFactory`
-- [ ] Builder
-   - [ ] Interfaces
-      - [ ] `IHouseBuilder`
-      - [ ] `IDuplexBuilder`
-   - [ ] Classe Concrete
-      - [ ] `QuebecoisHouseBuilder`
-      - [ ] `PersianHouseBuilder`
-      - [ ] `ModernHouseBuilder`
-      - [ ] `QuebecoisDuplexBuilder`
-      - [ ] `PersianDuplexBuilder`
-      - [ ] `ModernDuplexBuilder`
-- [ ] Engineer
-   - [ ] `HouseEngineer`
-   - [ ] `DuplexEngineer`
+- [x] Builder
+   - [x] Interfaces
+      - [x] `IHouseBuilder`
+      - [x] `IDuplexBuilder`
+   - [x] Classe Concrete
+      - [x] `QuebecoisHouseBuilder`
+      - [x] `PersianHouseBuilder`
+      - [x] `ModernHouseBuilder`
+      - [x] `QuebecoisDuplexBuilder`
+      - [x] `PersianDuplexBuilder`
+      - [x] `ModernDuplexBuilder`
+- [x] Engineer
+   - [x] `HouseEngineer`
+   - [x] `DuplexEngineer`
      
 ### Relation
 
@@ -360,7 +360,7 @@ Le diagramme doit montrer les relations entre entites suivantes :
 
 #### building (house, duplex)
 - [x] Implementation des champs (IBasement, IStructure, IInterior, IRoof)
-- [ ] Implementation des setters
+- [x] Implementation des setters
 
 
 ### Factory method
@@ -369,12 +369,12 @@ Le diagramme doit montrer les relations entre entites suivantes :
 ### Abstract Factory
 
 - [x] Implementation de l'interface IAbstractFactory
-- [ ] Implementation de subclass {QuebecoisFactory, PersianFactory, ModernFactory}
+- [x] Implementation de subclass {QuebecoisFactory, PersianFactory, ModernFactory}
 
 ### Builder
 
 - [x] Implementation de IBuilder, IHouseBuilder et IDuplexBuilder
-- [ ] Implementation de directeur
+- [x] Implementation de directeur
       
 
 

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Data.v1.Product
 {
-    enum ProductType
+    public enum ProductType
     {
         Quebecois,
         Persian,

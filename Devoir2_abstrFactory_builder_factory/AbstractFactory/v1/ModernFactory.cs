@@ -7,6 +7,7 @@ using Data.v1.Product.Structure;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Builder.v1;
 
 namespace AbstractFactory.v1
 {
@@ -14,12 +15,16 @@ namespace AbstractFactory.v1
     {
         public Duplex makeDuplex()
         {
-            return new Duplex();
+            return new DuplexDirector(
+                    new ModernDuplexBuilder()
+                ).MakeDuplex();
         }
 
         public House makeHouse()
         {
-            return new House();
+            return new HouseDirector(
+                    new ModernHouseBuilder()
+                ).MakeHouse();
         }
     }
 }
